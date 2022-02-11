@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "580434499005",
+    "project_id": "mysafer-d2a8e",
+    "storage_bucket": "mysafer-d2a8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580434499005:android:10d4b9869447a96eba6ed4",
+        "android_client_info": {
+          "package_name": "com.example.mysafer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580434499005-9rr3ggiveklbgili6m5uoscnkt89k0gm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQcEmItMsm5w-ROzJ0rIvvE53VOkefb54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580434499005-9rr3ggiveklbgili6m5uoscnkt89k0gm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
