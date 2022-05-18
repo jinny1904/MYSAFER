@@ -42,14 +42,16 @@ class LoginActivity : AppCompatActivity() {
         ),0)
     }
 
+    //결과 값이 넘어오는 부분
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(requestCode==GoogleLoginCode){
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)  //토큰값을 받아올 수 있음
             val account = task.getResult(ApiException::class.java)
-            val credential = GoogleAuthProvider.getCredential(account!!.idToken,null)
+            val credential = GoogleAuthProvider.getCredential(account!!.idToken,null)   // 이메일값이 암호화한 값이 토큰값
 
+            //firebase는 credential의 값을 받고, 이메일을 통해 회원 가입이 가능해짐
             FirebaseAuth.getInstance().signInWithCredential(credential)
                 .addOnCompleteListener { task ->
                     if(task.isSuccessful){
@@ -68,6 +70,6 @@ class LoginActivity : AppCompatActivity() {
 
         FirebaseFirestore.getInstance().collection("users").document(uid!!).set(userDTO)
         finish()
-        startActivity(Intent(this,MainActivity::class.java))
+        startActivity(Intent(this,MainActivity::class.java)) //로그인후 Main화면으로 이동
     }
 }

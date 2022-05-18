@@ -25,8 +25,13 @@ class MemberFragment : Fragment() {
         LinearLayout1 = view.findViewById(R.id.member_list)
 
         //LoginActivity 불러오기
-        //val intent = Intent(context, ListActivity::class.java)
-        //startActivity(intent)
+        LinearLayout1.setOnClickListener {
+            activity?.let {
+                val intent = Intent(context, ListActivity::class.java)
+                startActivity(intent)
+                activity?.finish()
+            }
+        }
     }
 
     override fun onCreateView(
